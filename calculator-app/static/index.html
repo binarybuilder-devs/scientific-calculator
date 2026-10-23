@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">∑</span>
+        <div>
+          <h1>Calculator</h1>
+          <p class="sub">Choose a tool, enter your numbers, get your answer.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav id="menu" class="menu" aria-label="Calculations"></nav>
+
+      <section id="panel" class="panel" aria-live="polite">
+        <div class="panel-empty" id="empty">
+          <span class="empty-icon" aria-hidden="true">✦</span>
+          <h2>Pick a calculation</h2>
+          <p class="muted">Tap any tool on the left to get started.</p>
+        </div>
+
+        <div id="workspace" hidden>
+          <div class="panel-head">
+            <span id="op-icon" class="op-icon">?</span>
+            <div>
+              <h2 id="op-title"></h2>
+              <p id="op-desc" class="muted"></p>
+            </div>
+          </div>
+
+          <form id="form" class="form" novalidate></form>
+
+          <div class="actions">
+            <button type="submit" form="form" class="btn primary" id="calc-btn">Calculate</button>
+            <button type="button" class="btn ghost" id="clear-btn">Clear</button>
+          </div>
+
+          <div id="result" class="result" hidden>
+            <span class="result-label">Result</span>
+            <output id="result-value"></output>
+          </div>
+          <p id="error" class="error" role="alert" hidden></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
